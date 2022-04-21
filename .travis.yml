@@ -20,4 +20,4 @@ deploy:
   bucket_name: "elasticbeanstalk-us-east-1-618590180755"
   bucket_path: "Dockerlearn"
   on:
-    branch: master
+    branch: main
