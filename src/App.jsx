@@ -10,6 +10,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Ready to deploy to aws</p>
+        <p>Instagram - @nayanpatil.js</p>
         
       </header>
     </div>
