@@ -1,0 +1,23 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker build -t dockerLearn -f Dockerfile.dev .
+
+script:
+  - docker run -e dockerLearn npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  access_key_id: $ACCESS_KEY_ID
+  secret_access_key:
+    secure: "$SECRET_ACCESS_KEY"
+  region: "us-east-1"
+  app: "dockerLearn"
+  env: "Dockerlearn-env"
+  bucket_name: "elasticbeanstalk-us-east-1-618590180755"
+  bucket_path: "Dockerlearn"
+  on:
+    branch: master
